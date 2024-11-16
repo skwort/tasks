@@ -42,7 +42,7 @@ ul {
     min-height: 23rem;
 }
 
-#unscheduled-tasks {
+#unsched {
     min-height: 10rem;
     max-height: fit-content;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
