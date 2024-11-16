@@ -1,8 +1,10 @@
 import flask
 
 
-def create_app():
+def create_app() -> flask.Flask:
     app = flask.Flask(__name__)
+
+    app.tasks = []
 
     # Register blueprints
     from .routes import main
