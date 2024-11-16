@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>TASKS</h1>
+        <div class="lists">
+            <div>
+                <h3>Must Do</h3>
+                <ul id="must-do" class="task-list"></ul>
+            </div>
+            <div>
+                <h3>Should Do</h3>
+                <ul id="should-do" class="task-list"></ul>
+            </div>
+            <div>
+                <h3>Will Do</h3>
+                <ul id="will-do" class="task-list"></ul>
+            </div>
+        </div>
+        <div>
+            <h3>Unscheduled Tasks</h3>
+            <ul id="unscheduled-tasks" class="task-list"></ul>
+        </div>
+        <button id="add-task-button">Add New Task</button>
+    </div>
+</body>
+</html>
+

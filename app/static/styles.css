@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-color: black;
+    color: white;
+    margin: 0;
+    font-family: monospace;
+    font-size: 16pt;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.lists {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+h3 {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 5px;
+    padding: 0;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    width: 20rem;
+    min-height: 23rem;
+}
+
+#unscheduled-tasks {
+    min-height: 10rem;
+    max-height: fit-content;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 10px; /* Spacing between items */
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    width: auto;
+    margin: 0 auto;
+    overflow-y: visible;
+}
+
+li {
+    font-size: 14pt;
+    margin: 10px 0;
+    background-color: #333;
+    padding: 10px;
+    border: 1px solid #555;
+    cursor: move;
+    color: white;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border-radius: 5px;
+    display: block;
+    flex-direction: column;
+}
+
+.drag-handle {
+    position: relative;
+    background-color: #444;
+    padding: 5px;
+    cursor: move;
+    text-align: center;
+    font-size: 12px;
+    color: #bbb;
+    margin: -10px -10px 10px -10px;
+    border-bottom: 1px solid #555;
+    border-radius: 5px 5px 0 0;
+}
+
+.drag-handle button {
+    position: absolute;
+    color:#bbb;
+    background-color: #444;
+    top: 5px;
+    right: 5px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.drag-handle button:hover {
+    background-color: #666;
+}
+
+.card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    outline: none;
+}
+
+.card-body {
+    font-size: 11pt;
+    outline: none;
+}
+
+.card-title:empty:before,
+.card-body:empty:before {
+    content: attr(placeholder);
+    color: #888;
+}
+
+#add-task-button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    font-size: 16pt;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+#add-task-button:hover {
+    background-color: #555;
+}
