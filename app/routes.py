@@ -7,7 +7,20 @@ main = flask.Blueprint("main", __name__)
 
 @main.route("/")
 def index() -> flask.Response:
-    return flask.render_template("index.html")
+
+    tasks = flask.current_app.tasks
+
+    must_do = [task for task in tasks if task["category"] == "must-do"]
+    should_do = [task for task in tasks if task["category"] == "should-do"]
+    will_do = [task for task in tasks if task["category"] == "will-do"]
+    unsched = [task for task in tasks if task["category"] == "unsched"]
+
+    return flask.render_template(
+        "index.html",
+        must_do=must_do,
+        should_do=should_do,
+        will_do=will_do,
+        unsched=unsched)
 
 
 @main.route("/api/tasks", methods=["GET"])

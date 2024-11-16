@@ -13,20 +13,64 @@
         <div class="lists">
             <div>
                 <h3>Must Do</h3>
-                <ul id="must-do" class="task-list"></ul>
+                <ul id="must-do" class="task-list">
+                    {% for task in must_do %}
+                    <li id="{{ task.id }}">
+                        <div class="drag-handle">
+                            ⠿
+                            <button class="delete-btn">✖</button>
+                        </div>
+                        <div class="card-title" contenteditable="true" placeholder="Title">{{ task.title }}</div>
+                        <div class="card-body" contenteditable="true" placeholder="Details">{{ task.body}}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
             <div>
                 <h3>Should Do</h3>
-                <ul id="should-do" class="task-list"></ul>
+                <ul id="should-do" class="task-list">
+                    {% for task in should_do %}
+                    <li id="{{ task.id }}">
+                        <div class="drag-handle">
+                            ⠿
+                            <button class="delete-btn">✖</button>
+                        </div>
+                        <div class="card-title" contenteditable="true" placeholder="Title">{{ task.title }}</div>
+                        <div class="card-body" contenteditable="true" placeholder="Details">{{ task.body}}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
             <div>
                 <h3>Will Do</h3>
-                <ul id="will-do" class="task-list"></ul>
+                <ul id="will-do" class="task-list">
+                    {% for task in will_do %}
+                    <li id="{{ task.id }}">
+                        <div class="drag-handle">
+                            ⠿
+                            <button class="delete-btn">✖</button>
+                        </div>
+                        <div class="card-title" contenteditable="true" placeholder="Title">{{ task.title }}</div>
+                        <div class="card-body" contenteditable="true" placeholder="Details">{{ task.body}}</div>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div>
             <h3>Unscheduled Tasks</h3>
-            <ul id="unsched" class="task-list"></ul>
+            <ul id="unsched" class="task-list">
+                {% for task in unsched %}
+                <li id="{{ task.id }}">
+                    <div class="drag-handle">
+                        ⠿
+                        <button class="delete-btn">✖</button>
+                    </div>
+                    <div class="card-title" contenteditable="true" placeholder="Title">{{ task.title }}</div>
+                    <div class="card-body" contenteditable="true" placeholder="Details">{{ task.body}}</div>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
         <button id="add-task-button">+</button>
     </div>
