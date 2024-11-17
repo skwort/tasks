@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 ⠿
                 <button class="delete-btn">✖</button>
             </div>
-            <div class="card-title" contenteditable="true" placeholder="Title"></div>
-            <div class="card-body" contenteditable="true" placeholder="Details"></div>
+            <div class="card-title" contenteditable="true" placeholder="Title" spellcheck="false"></div>
+            <div class="card-body" contenteditable="true" placeholder="Details" spellcheck="false"></div>
         `;
 
         // Attach event listeners to the task card
