@@ -110,8 +110,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     body: JSON.stringify({
                         id: li.id,
-                        title: li.querySelector('.card-title').innerText,
-                        body: li.querySelector('.card-body').innerText,
+                        title: li.querySelector('.card-title').innerText.replace(/\n{3,}/g, '\n\n'),
+                        body: li.querySelector('.card-body').innerText.replace(/\n{3,}/g, '\n\n')
                     }),
                 }).catch((error) => console.error('Error updating task:', error));
             });

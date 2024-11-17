@@ -109,6 +109,7 @@ li {
 .card-body {
     font-size: 11pt;
     outline: none;
+    white-space: pre-wrap;
 }
 
 .card-title:empty:before,
