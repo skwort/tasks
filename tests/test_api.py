@@ -1,3 +1,4 @@
+import os
 import pytest
 from app import create_app
 import http
@@ -5,9 +6,14 @@ import http
 
 @pytest.fixture()
 def app():
-    app = create_app()
+    config = {
+        "DATABASE_URI": "sqlite:///pytest.db"
+    }
+    app = create_app(config)
 
     yield app
+
+    os.remove("pytest.db")
 
 
 @pytest.fixture()
