@@ -12,19 +12,19 @@ First make a virtual environment and install the dependencies.
 ```
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -e .[dev]
 ```
 
 If you're working on development locally, you can run the debug server with:
 ```
-flask run --debug
+flask -A tasks run --debug
 ```
 
 If you plan on serving this non-locally I'd suggest using a WSGI. I'm currently
 using Gunicorn, which is included in the `requirements.txt`. You can run it
 using:
 ```
-gunicorn -w 2 -b 127.0.0.1:8000 app:create_app() --daemon
+gunicorn -w 2 -b 0.0.0.0:8000 "tasks:create_app()"
 ```
 
 I'm using [Caddy][1] as reverse-proxy to expose the service on my homelab.

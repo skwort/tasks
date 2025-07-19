@@ -1,0 +1,32 @@
+[project]
+name = "tasks"
+version = "0.0.0"
+description = "A simple task management application"
+authors = [{ name = "Sam Kwort", email = "skwort@skwort.dev" }]
+dependencies = [
+  "flask",
+  "gunicorn",
+  "sqlalchemy",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy",
+  "ruff",
+  "pytest",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+addopts = "-ra --maxfail=3"
+
+[tool.ruff]
+line-length = 79 
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
