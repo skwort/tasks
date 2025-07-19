@@ -36,4 +36,42 @@ to run the tests and generate a coverage report:
 pytest -v --cov=app --cov-report=html
 ```
 
+## Nix
+A nix flake is included in this repo. The dev shell can be run using:
+```sh
+nix develop
+```
+
+The application itself, i.e. flask application, can be served using
+```sh
+nix run
+```
+which will use `gunicorn` to serve the application on localhost. Arguments
+for `gunicorn` can be passed in via the command line:
+```sh
+nix run . -- -w 2 -b 0.0.0.0:8000
+```
+
+An options module is also available. Refer to `module.nix` for the available
+options. Here is how I use it in my config:
+```nix
+# tasks.nix
+{inputs, pkgs, ...}:
+{
+  imports = [ inputs.tasks.nixosModules.tasks ];
+  services.tasks.enable = true;
+  services.tasks.user = "sam";
+  services.tasks.group = "users";
+  services.tasks.dbPath = /data/config/tasks;
+  services.tasks.bindIp = "0.0.0.0";
+  services.tasks.bindPort = 8000;
+  services.tasks.workers = 2;
+  services.tasks.package = inputs.tasks.packages.${pkgs.system}.tasks;
+}
+```
+
+I import this into my main `configuration.nix`. You may need to setup the dbPath
+folder.
+
 [1]:https://caddyserver.com/
+
