@@ -12,7 +12,7 @@
     <h1>TASKS</h1>
         <div class="lists">
             <div>
-                <h3>Must Do</h3>
+                <h3>Now</h3>
                 <ul id="must-do" class="task-list">
                     {% for task in must_do %}
                     <li id="{{ task.id }}">
@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div>
-                <h3>Should Do</h3>
+                <h3>Next</h3>
                 <ul id="should-do" class="task-list">
                     {% for task in should_do %}
                     <li id="{{ task.id }}">
@@ -42,7 +42,7 @@
                 </ul>
             </div>
             <div>
-                <h3>Will Do</h3>
+                <h3>Later</h3>
                 <ul id="will-do" class="task-list">
                     {% for task in will_do %}
                     <li id="{{ task.id }}">
